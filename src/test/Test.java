@@ -7,6 +7,15 @@ public class Test {
 
 
 
+///////// #42
+	 public void breakingDeclaration() {
+		var silly 
+		= 1;
+	}
+////////
+
+
+
 ///////// #40 
 	public void findAnwser(boolean check) {}
 	
@@ -16,7 +25,7 @@ public class Test {
 		//findAnswer(value);
 		
 		// does initialize
-		boolean value = false;
+		boolean value = false; 
 		findAnswer(value);
 	}
 
@@ -73,7 +82,10 @@ public class Test {
 	
 ///////// main()
 	public static void main(String[] args) {
-	// ClassA a;
-	System.out.println("Hell from Test");
+	
+	Test test = new Test();
+	test.breakingDeclaration();
+	
+	System.out.println("Hell from Test #42");
 	}
 }
