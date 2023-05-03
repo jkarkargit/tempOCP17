@@ -1,95 +1,68 @@
 package test;
-// import packagea.ClassA;
 
+// import packagea.ClassA;
 
 public class Test {
 
 
 
 
-///////// #42
-	 public void breakingDeclaration() {
-		var silly 
-		= 1;
-	}
-////////
+///////// #45
 
-///////// #40 
-	public void doesThisCompile(boolean check) {
-		var question= 1;
-		var answer = 0;
+
+	// there are two variable with local scope.
+	// pieceOfCheese is a mehtod parameter
+	// bitesOCheese is decalred inside the method
+	// neither variable can be used outsie where it defined
+	public void eat (int piecesOfCheese) {
+		int bitesOfCheese = 1;
+		System.out.println(piecesOfCheese);
+	}
+
+	public void eat() {
+		int bitesOfCheese = 1;
+		
+		System.out.println("eat(): " + bitesOfCheese);
+		// System.out.println();
+	}
 	
-		if (check) {
-			answer = 2;
-		} else {
-			answer = 3;
-		}
-		System.out.println(answer);
-	}
-
-////////
-
-///////// #40 
-	public void findAnswer(boolean check) {
-		// not initialized
-		int answer;
-		int otherAnswer;  // not used therefore does not need to be initalized
+	
+	public void eatIfHungry(boolean hungry) {
 		
-		int onlyOneBranch;
-		
-		if (check) {
-			onlyOneBranch = 1;
-			answer = 1;
-		} else {
-			answer = 2;
+		if (hungry) {
+			int bitesOfCheese = 1;
+			
+			System.out.println("eatIfHungry(): " + bitesOfCheese); 
 		}
 		
-		// System.out.println(otherAnswer);
-		System.out.println(answer);
+		// bitesOCheese out of scope here
+		// DOES NOT COMPILE
+		// System.out.println(bitesOfCheese); 
+			
 	}
-	
-	public void checkAnwser(boolean check) {
-		//boolean value;	
-		// does not compile value not initialize.
-		//findAnswer(value);
 		
-		// does initialize
-		boolean value = false; 
-		findAnswer(value);
-	}
+////////
 
-/////////   
 
-	
-///////// #39 
-///////// local variables (called method variables)
-///////// do not have default values.
-	public int notValid() {
-		int y =10;
-		int x;
-		x = 3;
-		int reply = x + y; // DOES NOT COMPILE IF x IS NOT INITIALISED:	x=3
-		return reply;
-	}
-
-	public int valid() {
-		int y =10;
-		int x;
-		x = 3;
-	    int z;  // NEVER USED - COMPILES
-		int reply = x + y;  
-		return reply;
-	}
-/////////////
 	
 	
 ///////// main()
 	public static void main(String[] args) {
+	System.out.println();
+	System.out.println("////////////////////// Test //////////////////");
 	
 	Test test = new Test();
-	test.breakingDeclaration();
-	test.findAnswer(true);
+	test.eat();
+	test.eat(100);
+	test.eatIfHungry(true);
 	
+	// tem.out.println();
+	System.out.println("/////////////////////////////////////////////");
 	System.out.println("Hell from Test #42");
+	// System.out.println();
+	// test. ;
+	// System.out.println();
+	System.out.println("/////////////////////////////////////////////");
+	
 	}
 }
