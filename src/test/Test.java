@@ -7,9 +7,31 @@ public class Test {
 
 
 
+///////// #46
+// Tracing scope - exam tricks
+
+	public void eatMore(boolean hungry, int amountOfFood) {
+		int roomInBelly = 5;
+		System.out.println("amountOfFood: " + amountOfFood);
+		
+		if (hungry) {
+			System.out.println("amountOfFood: " + amountOfFood);
+			var timeToEat = true;
+			while (amountOfFood > 0) {
+				int amountEaten = 2;
+				roomInBelly = roomInBelly - amountEaten;
+				amountOfFood = amountOfFood - amountEaten;
+				System.out.println("amountOfFood: " + amountOfFood);
+			}
+		}
+		System.out.println("amountOfFood: " + amountOfFood);
+	}
+/////////////
+
+
+
+
 ///////// #45
-
-
 	// there are two variable with local scope.
 	// pieceOfCheese is a mehtod parameter
 	// bitesOCheese is decalred inside the method
@@ -52,13 +74,16 @@ public class Test {
 	System.out.println("////////////////////// Test //////////////////");
 	
 	Test test = new Test();
-	test.eat();
-	test.eat(100);
-	test.eatIfHungry(true);
+	test.eatMore(true, 10);
+	
+	
+	// test.eat();
+	// test.eat(100);
+	//test.eatIfHungry(true);
 	
 	// tem.out.println();
 	System.out.println("/////////////////////////////////////////////");
-	System.out.println("Hell from Test #42");
+	System.out.println("Hell from Test #46");
 	// System.out.println();
 	// test. ;
 	// System.out.println();
