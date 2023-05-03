@@ -14,10 +14,39 @@ public class Test {
 	}
 ////////
 
+///////// #40 
+	public void doesThisCompile(boolean check) {
+		var question= 1;
+		var answer = 0;
+	
+		if (check) {
+			answer = 2;
+		} else {
+			answer = 3;
+		}
+		System.out.println(answer);
+	}
 
+////////
 
 ///////// #40 
-	public void findAnwser(boolean check) {}
+	public void findAnswer(boolean check) {
+		// not initialized
+		int answer;
+		int otherAnswer;  // not used therefore does not need to be initalized
+		
+		int onlyOneBranch;
+		
+		if (check) {
+			onlyOneBranch = 1;
+			answer = 1;
+		} else {
+			answer = 2;
+		}
+		
+		// System.out.println(otherAnswer);
+		System.out.println(answer);
+	}
 	
 	public void checkAnwser(boolean check) {
 		//boolean value;	
@@ -31,36 +60,10 @@ public class Test {
 
 /////////   
 
-
-
-
-
-
-
-
 	
 ///////// #39 
 ///////// local variables (called method variables)
 ///////// do not have default values.
-	public void findAnswer(boolean check) {
-		// not initialized
-		int answer;
-		int otherAnswer;
-		int onlyOneBranch;
-		
-		if (check) {
-			onlyOneBranch = 1;
-			answer = 1;
-		} else {
-			answer = 2;
-		}
-		
-		System.out.println(answer);
-		
-		// does not compile onlyOneBranch must be initialized first
-		// System.out.println(onlyOneBranch);
-	}
-
 	public int notValid() {
 		int y =10;
 		int x;
@@ -85,6 +88,7 @@ public class Test {
 	
 	Test test = new Test();
 	test.breakingDeclaration();
+	test.findAnswer(true);
 	
 	System.out.println("Hell from Test #42");
 	}
