@@ -14,17 +14,33 @@ public class Test {
 	}
 ////////
 
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> dce1cf8 (#41..#44 Inferring the Type with var)
 ///////// #40 
 	public void doesThisCompile(boolean check) {
 		var question= 1;
 		var answer = 0;
 	
+<<<<<<< HEAD
 		if (check) {
 			answer = 2;
 		} else {
 			answer = 3;
 		}
 		System.out.println(answer);
+=======
+	public void checkAnwser(boolean check) {
+		//boolean value;	
+		// does not compile value not initialize.
+		//findAnswer(value);
+		
+		// does initialize
+		boolean value = false; 
+		findAnswer(value);
+>>>>>>> dce1cf8 (#41..#44 Inferring the Type with var)
 	}
 
 ////////
@@ -88,7 +104,10 @@ public class Test {
 	
 	Test test = new Test();
 	test.breakingDeclaration();
+<<<<<<< HEAD
 	test.findAnswer(true);
+=======
+>>>>>>> dce1cf8 (#41..#44 Inferring the Type with var)
 	
 	System.out.println("Hell from Test #42");
 	}
