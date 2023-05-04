@@ -1,95 +1,93 @@
 package test;
-// import packagea.ClassA;
 
+// import packagea.ClassA;
 
 public class Test {
 
 
 
 
-///////// #42
-	 public void breakingDeclaration() {
-		var silly 
-		= 1;
-	}
-////////
+///////// #46
+// Tracing scope - exam tricks
 
-///////// #40 
-	public void doesThisCompile(boolean check) {
-		var question= 1;
-		var answer = 0;
-	
-		if (check) {
-			answer = 2;
-		} else {
-			answer = 3;
+	public void eatMore(boolean hungry, int amountOfFood) {
+		int roomInBelly = 5;
+		System.out.println("amountOfFood: " + amountOfFood);
+		
+		if (hungry) {
+			System.out.println("amountOfFood: " + amountOfFood);
+			var timeToEat = true;
+			while (amountOfFood > 0) {
+				int amountEaten = 2;
+				roomInBelly = roomInBelly - amountEaten;
+				amountOfFood = amountOfFood - amountEaten;
+				System.out.println("amountOfFood: " + amountOfFood);
+			}
 		}
-		System.out.println(answer);
-	}
-
-////////
-
-///////// #40 
-	public void findAnswer(boolean check) {
-		// not initialized
-		int answer;
-		int otherAnswer;  // not used therefore does not need to be initalized
-		
-		int onlyOneBranch;
-		
-		if (check) {
-			onlyOneBranch = 1;
-			answer = 1;
-		} else {
-			answer = 2;
-		}
-		
-		// System.out.println(otherAnswer);
-		System.out.println(answer);
-	}
-	
-	public void checkAnwser(boolean check) {
-		//boolean value;	
-		// does not compile value not initialize.
-		//findAnswer(value);
-		
-		// does initialize
-		boolean value = false; 
-		findAnswer(value);
-	}
-
-/////////   
-
-	
-///////// #39 
-///////// local variables (called method variables)
-///////// do not have default values.
-	public int notValid() {
-		int y =10;
-		int x;
-		x = 3;
-		int reply = x + y; // DOES NOT COMPILE IF x IS NOT INITIALISED:	x=3
-		return reply;
-	}
-
-	public int valid() {
-		int y =10;
-		int x;
-		x = 3;
-	    int z;  // NEVER USED - COMPILES
-		int reply = x + y;  
-		return reply;
+		System.out.println("amountOfFood: " + amountOfFood);
 	}
 /////////////
+
+
+
+
+///////// #45
+	// there are two variable with local scope.
+	// pieceOfCheese is a mehtod parameter
+	// bitesOCheese is decalred inside the method
+	// neither variable can be used outsie where it defined
+	public void eat (int piecesOfCheese) {
+		int bitesOfCheese = 1;
+		System.out.println(piecesOfCheese);
+	}
+
+	public void eat() {
+		int bitesOfCheese = 1;
+		
+		System.out.println("eat(): " + bitesOfCheese);
+		// System.out.println();
+	}
+	
+	
+	public void eatIfHungry(boolean hungry) {
+		
+		if (hungry) {
+			int bitesOfCheese = 1;
+			
+			System.out.println("eatIfHungry(): " + bitesOfCheese); 
+		}
+		
+		// bitesOCheese out of scope here
+		// DOES NOT COMPILE
+		// System.out.println(bitesOfCheese); 
+			
+	}
+		
+////////
+
+
 	
 	
 ///////// main()
 	public static void main(String[] args) {
+	System.out.println();
+	System.out.println("////////////////////// Test //////////////////");
 	
 	Test test = new Test();
-	test.breakingDeclaration();
-	test.findAnswer(true);
+	test.eatMore(true, 10);
 	
-	System.out.println("Hell from Test #42");
+	
+	// test.eat();
+	// test.eat(100);
+	//test.eatIfHungry(true);
+	
+	// tem.out.println();
+	System.out.println("/////////////////////////////////////////////");
+	System.out.println("Hell from Test #46");
+	// System.out.println();
+	// test. ;
+	// System.out.println();
+	System.out.println("/////////////////////////////////////////////");
+	
 	}
 }
