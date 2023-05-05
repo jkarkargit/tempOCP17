@@ -15,11 +15,6 @@ public class Zoo {
 		System.out.println(os.getClass());
 		System.out.println(oi.getClass());
 		
-<<<<<<< HEAD
-		//////
-		
-=======
->>>>>>> dce1cf8 (#41..#44 Inferring the Type with var)
 		System.out.println( ( (Object)name.getClass().getSimpleName() ));		
 		
 		System.out.println( ( ((Object)size).getClass().getSimpleName() ));
